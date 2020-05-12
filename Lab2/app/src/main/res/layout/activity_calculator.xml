@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Screen">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/inputField"
+        style="@style/CalculatorField.Equation"
+        app:layout_constraintBottom_toTopOf="@+id/outputField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/outputField"
+        style="@style/CalculatorField.Result"
+        app:layout_constraintBottom_toTopOf="@+id/calcButtonDel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputField" />
+
+    <View
+        android:id="@+id/divider"
+        style="@style/Divider.Horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcButtonDel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton1"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_1"
+        app:layout_constraintBottom_toTopOf="@+id/calcButtonInverse"
+        app:layout_constraintEnd_toStartOf="@+id/calcButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton2"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_2"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton0"
+        app:layout_constraintEnd_toStartOf="@+id/calcButton3"
+        app:layout_constraintStart_toEndOf="@+id/calcButton1"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton3"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_3"
+        app:layout_constraintBottom_toTopOf="@+id/calcButtonComa"
+        app:layout_constraintEnd_toStartOf="@+id/calcButtonPlus"
+        app:layout_constraintStart_toEndOf="@+id/calcButton2"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton4"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_4"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton1"
+        app:layout_constraintEnd_toStartOf="@+id/calcButton5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton7" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton5"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_5"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton2"
+        app:layout_constraintEnd_toStartOf="@+id/calcButton6"
+        app:layout_constraintStart_toEndOf="@+id/calcButton4"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton8" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton6"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_6"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton3"
+        app:layout_constraintEnd_toStartOf="@+id/calcButtonMinus"
+        app:layout_constraintStart_toEndOf="@+id/calcButton5"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton9" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton7"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_7"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton4"
+        app:layout_constraintEnd_toStartOf="@+id/calcButton8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcButtonClear" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton8"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_8"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton5"
+        app:layout_constraintEnd_toStartOf="@+id/calcButton9"
+        app:layout_constraintStart_toEndOf="@+id/calcButton7"
+        app:layout_constraintTop_toBottomOf="@+id/calcButtonBrackets" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton9"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_9"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton6"
+        app:layout_constraintEnd_toStartOf="@+id/calcButtonMult"
+        app:layout_constraintStart_toEndOf="@+id/calcButton8"
+        app:layout_constraintTop_toBottomOf="@+id/calcButtonRoot" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton0"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/calcButtonComa"
+        app:layout_constraintStart_toEndOf="@+id/calcButtonInverse"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonPlus"
+        style="@style/CalculatorButton.Operation"
+        android:text="@string/calc_button_plus"
+        app:layout_constraintBottom_toTopOf="@+id/calcButtonEqu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calcButton3"
+        app:layout_constraintTop_toBottomOf="@+id/calcButtonMinus" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonMinus"
+        style="@style/CalculatorButton.Operation"
+        android:text="@string/calc_button_minus"
+        app:layout_constraintBottom_toTopOf="@+id/calcButtonPlus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calcButton6"
+        app:layout_constraintTop_toBottomOf="@+id/calcButtonMult" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonBrackets"
+        style="@style/CalculatorButton.Operation"
+        android:text="@string/calc_button_brackets"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton8"
+        app:layout_constraintEnd_toStartOf="@+id/calcButtonRoot"
+        app:layout_constraintStart_toEndOf="@+id/calcButtonClear"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonEqu"
+        style="@style/CalculatorButton.Equ"
+        android:text="@string/calc_button_equ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calcButtonComa"
+        app:layout_constraintTop_toBottomOf="@+id/calcButtonPlus" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonMult"
+        style="@style/CalculatorButton.Operation"
+        android:text="@string/calc_button_mult"
+        app:layout_constraintBottom_toTopOf="@+id/calcButtonMinus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calcButton9"
+        app:layout_constraintTop_toBottomOf="@+id/calcButtonDiv" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonDiv"
+        style="@style/CalculatorButton.Operation"
+        android:text="@string/calc_button_div"
+        app:layout_constraintBottom_toTopOf="@+id/calcButtonMult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calcButtonRoot"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonRoot"
+        style="@style/CalculatorButton.Operation"
+        android:text="@string/calc_button_root"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton9"
+        app:layout_constraintEnd_toStartOf="@+id/calcButtonDiv"
+        app:layout_constraintStart_toEndOf="@+id/calcButtonBrackets"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonComa"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_coma"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/calcButtonEqu"
+        app:layout_constraintStart_toEndOf="@+id/calcButton0"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonInverse"
+        style="@style/CalculatorButton.SimpleButton"
+        android:text="@string/calc_button_inverse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/calcButton0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcButton1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButtonClear"
+        style="@style/CalculatorButton.Clear"
+        android:text="@string/calc_button_clear"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton7"
+        app:layout_constraintEnd_toStartOf="@+id/calcButtonBrackets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <ImageButton
+        android:id="@+id/calcButtonDel"
+        style="@style/CalculatorButton.Controls"
+        android:src="@android:drawable/ic_input_delete"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputField" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

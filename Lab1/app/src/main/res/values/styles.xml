@@ -1,0 +1,47 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="actionBarTheme">@style/AppTheme.ActionBar</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorSecondary</item>
+        <item name="android:background">@color/colorBackgroundDark</item>
+        <item name="materialButtonStyle">@style/AppTheme.Button</item>
+        <item name="alertDialogTheme">@style/AppTheme.Dialog</item>
+    </style>
+
+    <style name="AppTheme.ActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="backgroundTint">@color/colorSecondaryDark</item>
+        <item name="android:elevation">12dp</item>
+    </style>
+
+    <style name="AppTheme.Dialog.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="AppTheme.Dialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowTitleStyle">@style/AppTheme.Dialog.Title</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimaryVariant</item>
+        <item name="android:background">@color/colorSecondaryLight</item>
+        <item name="buttonBarButtonStyle">@style/AppTheme.Button</item>
+        <item name="buttonStyle">@style/AppTheme.Button</item>
+    </style>
+
+    <style name="MatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="WrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

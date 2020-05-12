@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- margins -->
+    <dimen name="margin_buttons_horizontal">4dp</dimen>
+    <dimen name="margin_buttons_vertical">1dp</dimen>
+    <dimen name="margin_icon">16dp</dimen>
+
+    <!-- paddings -->
+    <dimen name="padding_field_horizontal">12dp</dimen>
+    <dimen name="padding_field_vertical">4dp</dimen>
+    <dimen name="padding_screen">6dp</dimen>
+
+    <!-- text sizes -->
+    <dimen name="text_size_button">28sp</dimen>
+    <dimen name="text_size_equation">36sp</dimen>
+    <dimen name="text_size_results">18sp</dimen>
+
+    <!-- sizes -->
+    <dimen name="size_divider">1dp</dimen>
+    <dimen name="size_icon">54dp</dimen>
+
+    <!-- elevations -->
+    <dimen name="elevation_button">3dp</dimen>
+
+</resources>

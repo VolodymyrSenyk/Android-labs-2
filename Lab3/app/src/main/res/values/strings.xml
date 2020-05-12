@@ -1,0 +1,14 @@
+<resources>
+    <!-- titles -->
+    <string name="app_name">Лабораторна робота №3</string>
+
+    <!-- hints -->
+    <string name="hint_question">Введіть своє питання</string>
+    <string name="hint_answer">Введіть варіант відповіді</string>
+
+    <!-- buttons -->
+    <string name="button_save_question">Зберегти</string>
+    <string name="button_answer_question">Відповісти</string>
+    <string name="button_delete_question">Скинути</string>
+
+</resources>

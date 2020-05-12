@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.senyk.volodymyr.calculator.domain.entity.LogicalSymbol" />
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.calculator.presentation.viewmodel.CalculatorViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/Size.MatchParent">
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton0"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.ZERO)}"
+            android:text="@string/calc_button_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/calcButtonComa"
+            app:layout_constraintStart_toEndOf="@+id/calcButtonInverse"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton2" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton1"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.ONE)}"
+            android:text="@string/calc_button_1"
+            app:layout_constraintBottom_toTopOf="@+id/calcButtonInverse"
+            app:layout_constraintEnd_toStartOf="@+id/calcButton2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton4" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton2"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.TWO)}"
+            android:text="@string/calc_button_2"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton0"
+            app:layout_constraintEnd_toStartOf="@+id/calcButton3"
+            app:layout_constraintStart_toEndOf="@+id/calcButton1"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton5" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton3"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.THREE)}"
+            android:text="@string/calc_button_3"
+            app:layout_constraintBottom_toTopOf="@+id/calcButtonComa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calcButton2"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton6" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton4"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.FOUR)}"
+            android:text="@string/calc_button_4"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton1"
+            app:layout_constraintEnd_toStartOf="@+id/calcButton5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton7" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton5"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.FIVE)}"
+            android:text="@string/calc_button_5"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton2"
+            app:layout_constraintEnd_toStartOf="@+id/calcButton6"
+            app:layout_constraintStart_toEndOf="@+id/calcButton4"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton8" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton6"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.SIX)}"
+            android:text="@string/calc_button_6"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calcButton5"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton9" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton7"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.SEVEN)}"
+            android:text="@string/calc_button_7"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton4"
+            app:layout_constraintEnd_toStartOf="@+id/calcButton8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calcButtonClear" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton8"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.EIGHT)}"
+            android:text="@string/calc_button_8"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton5"
+            app:layout_constraintEnd_toStartOf="@+id/calcButton9"
+            app:layout_constraintStart_toEndOf="@+id/calcButton7"
+            app:layout_constraintTop_toBottomOf="@+id/calcButtonBrackets" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButton9"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.NINE)}"
+            android:text="@string/calc_button_9"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calcButton8"
+            app:layout_constraintTop_toBottomOf="@+id/calcButtonRoot" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButtonComa"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.COMA)}"
+            android:text="@string/calc_button_coma"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calcButton0"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton3" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButtonInverse"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onInverseClick()}"
+            android:text="@string/calc_button_inverse"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/calcButton0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calcButton1" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButtonBrackets"
+            style="@style/CalculatorButton.Operation"
+            android:onClick="@{() -> viewModel.onBracketsClick()}"
+            android:text="@string/calc_button_brackets"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton8"
+            app:layout_constraintEnd_toStartOf="@+id/calcButtonRoot"
+            app:layout_constraintStart_toEndOf="@+id/calcButtonClear"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButtonRoot"
+            style="@style/CalculatorButton.Operation"
+            android:onClick="@{() -> viewModel.onSymbolClick(LogicalSymbol.ROOT)}"
+            android:text="@string/calc_button_root"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calcButtonBrackets"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorButton
+            android:id="@+id/calcButtonClear"
+            style="@style/CalculatorButton.SimpleButton"
+            android:onClick="@{() -> viewModel.onClearClick()}"
+            android:text="@string/calc_button_clear"
+            android:textColor="?attr/colorTextAttention"
+            app:layout_constraintBottom_toTopOf="@+id/calcButton7"
+            app:layout_constraintEnd_toStartOf="@+id/calcButtonBrackets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

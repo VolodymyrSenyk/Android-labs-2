@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchParent">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        style="@style/WrapContent"
+        android:layout_gravity="center"
+        android:text="@string/button" />
+
+</FrameLayout>

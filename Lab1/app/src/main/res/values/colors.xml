@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- bars -->
+    <color name="colorPrimaryDark">#000A12</color> <!-- status bar -->
+    <color name="colorPrimary">#263238</color> <!-- action bar -->
+    <color name="colorPrimaryLight">#4F5B62</color> <!-- tabs, bottom navigation -->
+
+    <color name="colorSecondaryDark">#29434E</color> <!-- FAB -->
+    <color name="colorSecondary">#546E7A</color> <!-- buttons -->
+    <color name="colorSecondaryLight">#819CA9</color> <!-- -->
+
+    <!-- backgrounds -->
+    <color name="colorBackgroundDark">#E1E2E1</color> <!-- container of other elements, for example RecyclerView -->
+    <color name="colorBackgroundLight">#F5F5F6</color> <!-- element with data, for example list item -->
+
+    <!-- text -->
+    <color name="colorTextPrimary">#CEDEE6</color>
+    <color name="colorTextPrimaryVariant">#233045</color>
+    <color name="colorTextSecondary">#29434E</color>
+
+</resources>

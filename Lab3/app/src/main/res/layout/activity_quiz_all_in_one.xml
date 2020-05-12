@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.senyk.volodymyr.lab3.domain.entity.ScreenMode" />
+
+        <variable
+            name="onSaveQuestionClickListener"
+            type="com.senyk.volodymyr.lab3.presentation.view.clicklistener.OnSaveQuestionClickListener" />
+
+        <variable
+            name="onAnswerQuestionClickListener"
+            type="com.senyk.volodymyr.lab3.presentation.view.clicklistener.OnAnswerQuestionClickListener" />
+
+        <variable
+            name="onDeleteQuestionClickListener"
+            type="com.senyk.volodymyr.lab3.presentation.view.clicklistener.OnDeleteQuestionClickListener" />
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.lab3.presentation.viewmodel.QuizViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:padding="@dimen/padding_big"
+        tools:context=".presentation.view.activity.QuizActivity">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/questionOutputField"
+            style="@style/QuestionOutputField"
+            android:text="@{viewModel.screenMode() != ScreenMode.CREATE_QUESTION ? viewModel.question().text : null}"
+            android:visibility="@{viewModel.screenMode() != ScreenMode.CREATE_QUESTION ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@+id/questionTextInputField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/questionTextInputField"
+            style="@style/QuestionInputField"
+            android:text="@{viewModel.screenMode() == ScreenMode.ASK_QUESTION ? null : null}"
+            android:visibility="@{viewModel.screenMode() == ScreenMode.CREATE_QUESTION ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@+id/answersContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionOutputField" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/answersContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionTextInputField">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/firstAnswerCheckBox"
+                    style="@style/AnswerCheckBox"
+                    android:background="@{viewModel.screenMode() == ScreenMode.SHOW_ANSWER_RESULTS ? viewModel.answerResults()[0] : @color/colorBackground}"
+                    android:clickable="@{viewModel.screenMode() != ScreenMode.SHOW_ANSWER_RESULTS}"
+                    android:text="@{viewModel.screenMode() != ScreenMode.CREATE_QUESTION ? viewModel.question().answers[0].text : null}"
+                    app:layout_constraintBottom_toTopOf="@+id/secondAnswerCheckBox"
+                    app:layout_constraintEnd_toStartOf="@id/firstAnswerInputField"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/firstAnswerInputField"
+                    style="@style/AnswerInputField"
+                    android:visibility="@{viewModel.screenMode() == ScreenMode.CREATE_QUESTION ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toTopOf="@+id/secondAnswerInputField"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/firstAnswerCheckBox"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/secondAnswerCheckBox"
+                    style="@style/AnswerCheckBox"
+                    android:background="@{viewModel.screenMode() == ScreenMode.SHOW_ANSWER_RESULTS ? viewModel.answerResults()[1] : @color/colorBackground}"
+                    android:clickable="@{viewModel.screenMode() != ScreenMode.SHOW_ANSWER_RESULTS}"
+                    android:text="@{viewModel.screenMode() != ScreenMode.CREATE_QUESTION ? viewModel.question().answers[1].text : null}"
+                    app:layout_constraintBottom_toTopOf="@+id/thirdAnswerCheckBox"
+                    app:layout_constraintEnd_toStartOf="@id/secondAnswerInputField"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/firstAnswerCheckBox" />
+
+                <EditText
+                    android:id="@+id/secondAnswerInputField"
+                    style="@style/AnswerInputField"
+                    android:visibility="@{viewModel.screenMode() == ScreenMode.CREATE_QUESTION ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toTopOf="@+id/thirdAnswerInputField"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/secondAnswerCheckBox"
+                    app:layout_constraintTop_toBottomOf="@+id/firstAnswerInputField" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/thirdAnswerCheckBox"
+                    style="@style/AnswerCheckBox"
+                    android:background="@{viewModel.screenMode() == ScreenMode.SHOW_ANSWER_RESULTS ? viewModel.answerResults()[2] : @color/colorBackground}"
+                    android:clickable="@{viewModel.screenMode() != ScreenMode.SHOW_ANSWER_RESULTS}"
+                    android:text="@{viewModel.screenMode() != ScreenMode.CREATE_QUESTION ? viewModel.question().answers[2].text : null}"
+                    app:layout_constraintBottom_toTopOf="@+id/fourthAnswerCheckBox"
+                    app:layout_constraintEnd_toStartOf="@id/thirdAnswerInputField"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/secondAnswerCheckBox" />
+
+                <EditText
+                    android:id="@+id/thirdAnswerInputField"
+                    style="@style/AnswerInputField"
+                    android:visibility="@{viewModel.screenMode() == ScreenMode.CREATE_QUESTION ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toTopOf="@id/fourthAnswerInputField"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/thirdAnswerCheckBox"
+                    app:layout_constraintTop_toBottomOf="@+id/secondAnswerInputField" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/fourthAnswerCheckBox"
+                    style="@style/AnswerCheckBox"
+                    android:background="@{viewModel.screenMode() == ScreenMode.SHOW_ANSWER_RESULTS ? viewModel.answerResults()[3] : @color/colorBackground}"
+                    android:clickable="@{viewModel.screenMode() != ScreenMode.SHOW_ANSWER_RESULTS}"
+                    android:text="@{viewModel.screenMode() != ScreenMode.CREATE_QUESTION ? viewModel.question().answers[3].text : null}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/fourthAnswerInputField"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/thirdAnswerCheckBox" />
+
+                <EditText
+                    android:id="@+id/fourthAnswerInputField"
+                    style="@style/AnswerInputField"
+                    android:visibility="@{viewModel.screenMode() == ScreenMode.CREATE_QUESTION ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/fourthAnswerCheckBox"
+                    app:layout_constraintTop_toBottomOf="@+id/thirdAnswerInputField" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button"
+            style="@style/AppButton"
+            android:onClick="@{viewModel.screenMode() == ScreenMode.CREATE_QUESTION ? onSaveQuestionClickListener::onSaveQuestionClick : viewModel.screenMode() == ScreenMode.ASK_QUESTION ? onAnswerQuestionClickListener::onAnswerQuestionClick : viewModel.screenMode() == ScreenMode.SHOW_ANSWER_RESULTS ? onDeleteQuestionClickListener::onDeleteQuestionClick : null}"
+            android:text="@{viewModel.screenMode() == ScreenMode.CREATE_QUESTION ? @string/button_save_question : viewModel.screenMode() == ScreenMode.ASK_QUESTION ? @string/button_answer_question : viewModel.screenMode() == ScreenMode.SHOW_ANSWER_RESULTS ? @string/button_delete_question : null}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answersContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

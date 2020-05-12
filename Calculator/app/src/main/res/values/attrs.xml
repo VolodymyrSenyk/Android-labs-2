@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- colors -->
+    <attr name="colorText" format="color|reference" />
+    <attr name="colorTextLight" format="color|reference" />
+    <attr name="colorTextDark" format="color|reference" />
+    <attr name="colorTextVariant" format="color|reference" />
+    <attr name="colorTextAttention" format="color|reference" />
+    <attr name="colorBackground" format="color|reference" />
+    <attr name="colorBackgroundDark" format="color|reference" />
+    <attr name="colorDivider" format="color|reference" />
+    <attr name="colorButton" format="color|reference" />
+    <attr name="colorButtonLight" format="color|reference" />
+    <attr name="colorButtonDark" format="color|reference" />
+    <attr name="colorIcon" format="color|reference" />
+
+    <!-- drawables -->
+    <attr name="icon_day" format="reference" />
+    <attr name="icon_night" format="reference" />
+    <attr name="icon_switch" format="reference" />
+    <attr name="icon_change_mode" format="reference" />
+    <attr name="icon_delete_input" format="reference" />
+    <attr name="icon_calculator" format="reference" />
+    <attr name="icon_history" format="reference" />
+
+    <!-- dimens -->
+    <attr name="margin_main" format="dimension" />
+    <attr name="margin_buttons_horizontal" format="dimension" />
+    <attr name="margin_buttons_vertical" format="dimension" />
+    <attr name="margin_icon" format="dimension" />
+    <attr name="padding_field_horizontal" format="dimension" />
+    <attr name="padding_field_vertical" format="dimension" />
+    <attr name="padding_screen" format="dimension" />
+    <attr name="text_size_calculator_button" format="dimension" />
+    <attr name="text_size_equation" format="dimension" />
+    <attr name="text_size_results" format="dimension" />
+    <attr name="text_size_history_equation" format="dimension" />
+    <attr name="text_size_history_answer" format="dimension" />
+    <attr name="text_size_button" format="dimension" />
+    <attr name="size_divider" format="dimension" />
+    <attr name="size_icon" format="dimension" />
+    <attr name="elevation_button" format="dimension" />
+
+</resources>

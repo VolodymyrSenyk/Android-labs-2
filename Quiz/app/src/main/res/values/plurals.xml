@@ -1,0 +1,10 @@
+<resources>
+
+    <plurals name="poets">
+        <item quantity="one">%d стиха</item>
+        <item quantity="few">%d стихов</item>
+        <item quantity="many">%d стихов</item>
+        <item quantity="other">%d стихов</item>
+    </plurals>
+
+</resources>

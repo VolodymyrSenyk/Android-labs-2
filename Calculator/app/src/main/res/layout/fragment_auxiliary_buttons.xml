@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.senyk.volodymyr.calculator.domain.entity.LogicalSymbol" />
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.calculator.presentation.viewmodel.CalculatorViewModel" />
+
+        <variable
+            name="onChangeModeClickListener"
+            type="com.senyk.volodymyr.calculator.presentation.databinding.clicklistener.animated.OnChangeModeClickListener" />
+
+        <variable
+            name="onChangeThemeClickListener"
+            type="com.senyk.volodymyr.calculator.presentation.databinding.clicklistener.animated.OnChangeThemeClickListener" />
+
+        <variable
+            name="onDeleteClickListener"
+            type="com.senyk.volodymyr.calculator.presentation.databinding.clicklistener.animated.OnDeleteClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/Size.Wide">
+
+        <ImageButton
+            android:id="@+id/calcButtonHistory"
+            style="@style/CalculatorButton.Controls"
+            android:onClick="@{() -> viewModel.isShowingHistory() ? viewModel.onHideHistoryClick() : viewModel.onShowHistoryClick()}"
+            android:src="@{viewModel.isShowingHistory() ? @drawable/ic_calculator : @drawable/ic_history}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/calcButtonChangeMode"
+            style="@style/CalculatorButton.Controls"
+            android:onClick="@{onChangeModeClickListener::onChangeModeClick}"
+            android:src="?attr/icon_change_mode"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/calcButtonHistory"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/buttonChangeTheme"
+            style="@style/CalculatorButton.Controls"
+            android:onClick="@{onChangeThemeClickListener::onChangeThemeClick}"
+            android:src="@{viewModel.isCurrentThemeNight() ? @drawable/ic_day : @drawable/ic_night}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/calcButtonChangeMode"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/calcButtonDel"
+            style="@style/CalculatorButton.Controls"
+            android:onClick="@{onDeleteClickListener::onDeleteClick}"
+            android:src="?attr/icon_delete_input"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/buttonChangeTheme"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

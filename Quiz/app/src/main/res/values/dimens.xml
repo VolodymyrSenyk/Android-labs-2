@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_size_question">24sp</dimen>
+    <dimen name="text_size_answer">24sp</dimen>
+
+    <dimen name="padding_text_question">16dp</dimen>
+    <dimen name="padding_screen">12dp</dimen>
+
+    <dimen name="margin_buttons">4dp</dimen>
+    <dimen name="margin_main">24dp</dimen>
+
+</resources>

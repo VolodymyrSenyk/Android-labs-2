@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorIcLauncherBackground">#FFFFFF</color>
+
+    <color name="colorPrimary">#111B92</color>
+    <color name="colorPrimaryDark">#000063</color>
+    <color name="colorAccent">#2D67C1</color>
+
+    <color name="colorBackground">#E1F5FE</color>
+
+    <color name="colorQuestionText">#253258</color>
+
+    <color name="colorButton">#6DA7F1</color>
+    <color name="colorTrue">#64DD17</color>
+    <color name="colorFalse">#FF0000</color>FF0000
+    <color name="colorTrueLight">#1A64FF17</color>
+    <color name="colorFalseLight">#1AFF0000</color>
+
+    <color name="colorText">#263238</color>
+
+</resources>

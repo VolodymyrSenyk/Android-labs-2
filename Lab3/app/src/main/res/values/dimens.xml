@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- margins -->
+    <dimen name="margin_big">16dp</dimen>
+    <dimen name="margin_small">2dp</dimen>
+
+    <!-- paddings -->
+    <dimen name="padding_big">8dp</dimen>
+
+    <!-- text -->
+    <dimen name="text_size_question">24sp</dimen>
+    <dimen name="text_size_answer">18sp</dimen>
+
+    <!-- sizes -->
+    <dimen name="size_divider">1dp</dimen>
+
+</resources>

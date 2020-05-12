@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.senyk.volodymyr.calculator.domain.entity.LogicalSymbol" />
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.calculator.presentation.viewmodel.CalculatorViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/Size.MatchParent">
+
+        <com.senyk.volodymyr.calculator.presentation.view.customview.CalculatorEditText
+            android:id="@+id/inputField"
+            style="@style/CalculatorField.Equation"
+            android:text="@{viewModel.currentEquation()}"
+            app:layout_constraintBottom_toTopOf="@+id/outputField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:setCursorPosition="@{viewModel.currentCursorPosition()}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/outputField"
+            style="@style/CalculatorField.Result"
+            android:text="@{viewModel.currentResult()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputField" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/unitOutput"
+            style="@style/Size.WrapContent"
+            android:text="@{viewModel.isCurrentUnitDegrees() ? @string/calc_button_unit_deg : @string/calc_button_unit_rad}"
+            android:textColor="?attr/colorTextLight"
+            android:textSize="?attr/text_size_button"
+            android:visibility="@{viewModel.isCurrentModeFull() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/inputField"
+            app:layout_constraintEnd_toEndOf="@+id/inputField"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/inputField"
+            app:layout_constraintTop_toTopOf="@id/inputField"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

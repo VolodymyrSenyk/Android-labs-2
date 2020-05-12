@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lab1</string>
+
+    <string name="button">Просто кнопка</string>
+
+    <string name="dialog_title">Dialog</string>
+    <string name="dialog_text">Покормить кота?</string>
+    <string name="dialog_action_neutral">Cancel</string>
+    <string name="dialog_action_positive">OK</string>
+</resources>

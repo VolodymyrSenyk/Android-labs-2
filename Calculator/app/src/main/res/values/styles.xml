@@ -1,0 +1,168 @@
+<resources>
+
+    <style name="AppTheme.Base" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorText</item>
+        <item name="colorText">@color/colorText</item>
+        <item name="colorTextLight">@color/colorTextLight</item>
+        <item name="colorTextDark">@color/colorTextDark</item>
+        <item name="colorTextVariant">@color/colorTextVariant</item>
+        <item name="colorTextAttention">@color/colorTextAttention</item>
+        <item name="colorBackground">@color/colorBackground</item>
+        <item name="colorBackgroundDark">@color/colorBackgroundDark</item>
+        <item name="colorDivider">@color/colorDivider</item>
+        <item name="colorButton">@color/colorButton</item>
+        <item name="colorButtonLight">@color/colorButtonLight</item>
+        <item name="colorButtonDark">@color/colorButtonDark</item>
+        <item name="colorIcon">@color/colorIcon</item>
+
+        <item name="icon_day">@drawable/ic_day</item>
+        <item name="icon_night">@drawable/ic_night</item>
+        <item name="icon_switch">@drawable/ic_switch</item>
+        <item name="icon_change_mode">@drawable/ic_change_mode</item>
+        <item name="icon_delete_input">@android:drawable/ic_input_delete</item>
+        <item name="icon_calculator">@drawable/ic_calculator</item>
+        <item name="icon_history">@drawable/ic_history</item>
+
+        <item name="margin_main">@dimen/margin_main</item>
+        <item name="margin_buttons_horizontal">@dimen/margin_buttons_horizontal</item>
+        <item name="margin_buttons_vertical">@dimen/margin_buttons_vertical</item>
+        <item name="margin_icon">@dimen/margin_icon</item>
+        <item name="padding_field_horizontal">@dimen/padding_field_horizontal</item>
+        <item name="padding_field_vertical">@dimen/padding_field_vertical</item>
+        <item name="padding_screen">@dimen/padding_screen</item>
+        <item name="text_size_calculator_button">@dimen/text_size_button</item>
+        <item name="text_size_equation">@dimen/text_size_equation</item>
+        <item name="text_size_results">@dimen/text_size_results</item>
+        <item name="text_size_history_equation">@dimen/text_size_results</item>
+        <item name="text_size_history_answer">@dimen/text_size_equation</item>
+        <item name="text_size_button">@dimen/text_size_results</item>
+        <item name="size_divider">@dimen/size_divider</item>
+        <item name="size_icon">@dimen/size_icon</item>
+        <item name="elevation_button">@dimen/elevation_button</item>
+
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="Size" />
+
+    <style name="Size.MatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Size.WrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Size.MatchConstraints">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="Size.Wide" parent="Size.MatchParent">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Size.Wide.MatchConstraints" parent="Size.MatchConstraints">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Size.Tall" parent="Size.MatchParent">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Size.Tall.MatchConstraints" parent="Size.MatchConstraints">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Screen" parent="Size.MatchParent">
+        <item name="android:background">?attr/colorBackground</item>
+        <item name="android:padding">?attr/padding_screen</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:background">?attr/colorDivider</item>
+    </style>
+
+    <style name="Divider.Horizontal" parent="Divider">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">?attr/size_divider</item>
+        <item name="android:layout_marginLeft">?attr/margin_buttons_horizontal</item>
+        <item name="android:layout_marginRight">?attr/margin_buttons_horizontal</item>
+    </style>
+
+    <style name="Divider.Vertical" parent="Divider">
+        <item name="android:layout_width">?attr/size_divider</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginTop">?attr/margin_buttons_vertical</item>
+        <item name="android:layout_marginBottom">?attr/margin_buttons_vertical</item>
+    </style>
+
+    <style name="CalculatorButton.SimpleButton.Base" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="backgroundTint">?attr/colorButton</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?attr/colorTextDark</item>
+        <item name="android:textSize">?attr/text_size_calculator_button</item>
+        <item name="android:layout_marginTop">?attr/margin_buttons_vertical</item>
+        <item name="android:layout_marginBottom">?attr/margin_buttons_vertical</item>
+        <item name="android:layout_marginLeft">?attr/margin_buttons_horizontal</item>
+        <item name="android:layout_marginRight">?attr/margin_buttons_horizontal</item>
+    </style>
+
+    <style name="CalculatorButton.SimpleButton" parent="CalculatorButton.SimpleButton.Base" />
+
+    <style name="CalculatorButton.Operation" parent="CalculatorButton.SimpleButton">
+        <item name="android:textColor">?attr/colorText</item>
+    </style>
+
+    <style name="CalculatorField.Equation" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:textSize">?attr/text_size_equation</item>
+        <item name="android:inputType">textFilter|textMultiLine</item>
+        <item name="android:paddingTop">?attr/padding_field_vertical</item>
+        <item name="android:paddingBottom">?attr/padding_field_vertical</item>
+        <item name="android:paddingLeft">?attr/padding_field_horizontal</item>
+        <item name="android:paddingRight">?attr/padding_field_horizontal</item>
+    </style>
+
+    <style name="CalculatorField.Result" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:textColor">?attr/colorTextLight</item>
+        <item name="android:textSize">?attr/text_size_results</item>
+        <item name="android:paddingTop">?attr/padding_field_vertical</item>
+        <item name="android:paddingBottom">?attr/padding_field_vertical</item>
+        <item name="android:paddingLeft">?attr/padding_field_horizontal</item>
+        <item name="android:paddingRight">?attr/padding_field_horizontal</item>
+    </style>
+
+    <style name="CalculatorButton.Controls" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">?attr/size_icon</item>
+        <item name="android:layout_height">?attr/size_icon</item>
+        <item name="android:background">@null</item>
+        <item name="android:tint">?attr/colorIcon</item>
+        <item name="android:layout_margin">?attr/margin_icon</item>
+    </style>
+
+</resources>

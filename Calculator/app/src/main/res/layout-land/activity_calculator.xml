@@ -1,0 +1,75 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.senyk.volodymyr.calculator.domain.entity.LogicalSymbol" />
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.calculator.presentation.viewmodel.CalculatorViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/Screen">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fieldsContainer"
+            android:name="com.senyk.volodymyr.calculator.presentation.view.fragment.FieldsFragment"
+            style="@style/Size.MatchConstraints"
+            app:layout_constraintBottom_toTopOf="@id/auxiliaryButtonsContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/auxiliaryButtonsContainer"
+            android:name="com.senyk.volodymyr.calculator.presentation.view.fragment.AuxiliaryButtonsFragment"
+            style="@style/Size.Wide.MatchConstraints"
+            app:layout_constraintBottom_toTopOf="@id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fieldsContainer" />
+
+        <View
+            android:id="@+id/divider"
+            style="@style/Divider.Horizontal"
+            app:layout_constraintBottom_toTopOf="@id/mainOperatorsContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auxiliaryButtonsContainer" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/additionalOperatorsContainer"
+            android:name="com.senyk.volodymyr.calculator.presentation.view.fragment.AdditionalOperatorsFragment"
+            style="@style/Size.MatchConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/digitsContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintWidth_percent="0.43" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/digitsContainer"
+            android:name="com.senyk.volodymyr.calculator.presentation.view.fragment.DigitsFragment"
+            style="@style/Size.MatchConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mainOperatorsContainer"
+            app:layout_constraintStart_toEndOf="@id/additionalOperatorsContainer"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintWidth_percent="0.43" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/mainOperatorsContainer"
+            android:name="com.senyk.volodymyr.calculator.presentation.view.fragment.MainOperatorsFragment"
+            style="@style/Size.MatchConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/digitsContainer"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintWidth_percent="0.14" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

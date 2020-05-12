@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CalculatorButton.SimpleButton.v21" parent="CalculatorButton.SimpleButton.Base">
+        <item name="android:elevation">?attr/elevation_button</item>
+    </style>
+
+    <style name="CalculatorButton.SimpleButton" parent="CalculatorButton.SimpleButton.v21" />
+
+    <style name="AppTheme.v21" parent="AppTheme.Base">
+        <item name="android:navigationBarColor">@color/colorBackgroundDark</item>
+    </style>
+
+    <style name="AppTheme" parent="AppTheme.v21" />
+
+</resources>

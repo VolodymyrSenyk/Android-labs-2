@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LabThread</string>
+
+    <!-- buttons -->
+    <string name="button_start">Start</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_stop">Stop</string>
+    <string name="button_restart">Rerun</string>
+
+</resources>

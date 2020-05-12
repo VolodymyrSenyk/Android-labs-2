@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.senyk.volodymyr.quiz.R" />
+
+        <import type="com.google.android.material.button.MaterialButton" />
+
+        <variable
+            name="viewmodel"
+            type="com.senyk.volodymyr.quiz.presentation.viewmodel.QuizViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{viewmodel.question().answers}"
+        android:padding="@dimen/padding_screen">
+        <!--app:layoutDescription="@xml/scene_on_question_change"
+        tools:showPaths="true"-->
+
+        <com.senyk.volodymyr.quiz.presentation.view.customview.FixedLinesAdaptiveTextView
+            android:id="@+id/textQuestion"
+            style="@style/QuestionField"
+            android:text="@{viewmodel.question().question}"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAnswer1"
+            app:layout_constraintHeight_percent="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAnswer1"
+            style="@style/AnswerButton"
+            android:clickable="@{!viewmodel.question().answered}"
+            android:onClick="@{(view) -> viewmodel.onAnswerClick(((MaterialButton)view).getText().toString())}"
+            android:text="@{viewmodel.question().answers[0].text}"
+            app:autoSizeMaxTextSize="@dimen/text_size_answer"
+            app:autoSizeTextType="uniform"
+            app:backgroundTint="@{viewmodel.question().answers[0]}"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAnswer3"
+            app:layout_constraintEnd_toStartOf="@+id/buttonAnswer2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAnswer2"
+            style="@style/AnswerButton"
+            android:clickable="@{!viewmodel.question().answered}"
+            android:onClick="@{(view) -> viewmodel.onAnswerClick(((MaterialButton)view).getText().toString())}"
+            android:text="@{viewmodel.question().answers[1].text}"
+            app:autoSizeMaxTextSize="@dimen/text_size_answer"
+            app:autoSizeTextType="uniform"
+            app:backgroundTint="@{viewmodel.question().answers[1]}"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAnswer4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonAnswer1"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAnswer3"
+            style="@style/AnswerButton"
+            android:clickable="@{!viewmodel.question().answered}"
+            android:onClick="@{(view) -> viewmodel.onAnswerClick(((MaterialButton)view).getText().toString())}"
+            android:text="@{viewmodel.question().answers[2].text}"
+            app:autoSizeMaxTextSize="@dimen/text_size_answer"
+            app:autoSizeTextType="uniform"
+            app:backgroundTint="@{viewmodel.question().answers[2]}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonAnswer4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAnswer1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAnswer4"
+            style="@style/AnswerButton"
+            android:clickable="@{!viewmodel.question().answered}"
+            android:onClick="@{(view) -> viewmodel.onAnswerClick(((MaterialButton)view).getText().toString())}"
+            android:text="@{viewmodel.question().answers[3].text}"
+            app:autoSizeMaxTextSize="@dimen/text_size_answer"
+            app:autoSizeTextType="uniform"
+            app:backgroundTint="@{viewmodel.question().answers[3]}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonAnswer3"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAnswer2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonToNext"
+            style="@style/NextButton"
+            android:onClick="@{() -> viewmodel.onNextQuestionClick(4)}"
+            android:visibility="@{viewmodel.question().answered ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/textQuestion"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion"
+            app:layout_constraintTop_toTopOf="@+id/textQuestion"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_next" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</layout>

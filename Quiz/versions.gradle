@@ -1,0 +1,40 @@
+static String getVersionName() {
+    return "0.0.1"
+}
+
+static int getVersionCode() {
+    String[] parts = getVersionName().split("\\.")
+    int v1 = Integer.parseInt(parts[0])
+    int v2 = Integer.parseInt(parts[1])
+    int v3 = Integer.parseInt(parts[2])
+    return v1 * 1000_000 + v2 * 1000 + v3
+}
+
+ext {
+    versions = [
+            application          : [
+                    versionName: getVersionName(),
+                    versionCode: getVersionCode()
+            ],
+            android              : [
+                    compileSdk: 29,
+                    buildTools: '29.0.3',
+                    minSdk    : 15,
+                    targetSdk : 29,
+            ],
+            android_gradle_plugin: '3.6.3',
+            androidx             : [
+                    appcompat : '1.1.0',
+                    constraint: '1.1.3',
+                    material  : '1.1.0'
+            ],
+            lifecycle            : '2.2.0',
+            frameworks           : [
+                    dagger       : '2.26',
+                    rxjava       : '2.2.9',
+                    rxandroid    : '2.1.1',
+                    rxpermissions: '0.7.0',
+                    room         : '2.2.5'
+            ]
+    ]
+}

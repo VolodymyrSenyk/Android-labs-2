@@ -1,0 +1,51 @@
+<resources>
+    <!-- titles -->
+    <string name="app_name">Calculator</string>
+
+    <!-- buttons -->
+    <string name="calc_button_1" translatable="false">1</string>
+    <string name="calc_button_2" translatable="false">2</string>
+    <string name="calc_button_3" translatable="false">3</string>
+    <string name="calc_button_4" translatable="false">4</string>
+    <string name="calc_button_5" translatable="false">5</string>
+    <string name="calc_button_6" translatable="false">6</string>
+    <string name="calc_button_7" translatable="false">7</string>
+    <string name="calc_button_8" translatable="false">8</string>
+    <string name="calc_button_9" translatable="false">9</string>
+    <string name="calc_button_0" translatable="false">0</string>
+    <string name="calc_button_plus" translatable="false">+</string>
+    <string name="calc_button_minus" translatable="false">−</string>
+    <string name="calc_button_brackets" translatable="false">( )</string>
+    <string name="calc_button_equ" translatable="false">=</string>
+    <string name="calc_button_mult" translatable="false">×</string>
+    <string name="calc_button_div" translatable="false">÷</string>
+    <string name="calc_button_root" translatable="false">√</string>
+    <string name="calc_button_coma" translatable="false">,</string>
+    <string name="calc_button_inverse" translatable="false">+/−</string>
+    <string name="calc_button_clear" translatable="false">C</string>
+
+    <!-- symbols -->
+    <string name="calc_1" translatable="false">1</string>
+    <string name="calc_2" translatable="false">2</string>
+    <string name="calc_3" translatable="false">3</string>
+    <string name="calc_4" translatable="false">4</string>
+    <string name="calc_5" translatable="false">5</string>
+    <string name="calc_6" translatable="false">6</string>
+    <string name="calc_7" translatable="false">7</string>
+    <string name="calc_8" translatable="false">8</string>
+    <string name="calc_9" translatable="false">9</string>
+    <string name="calc_0" translatable="false">0</string>
+    <string name="calc_plus" translatable="false">+</string>
+    <string name="calc_minus" translatable="false">−</string>
+    <string name="calc_bracket_open" translatable="false">(</string>
+    <string name="calc_bracket_close" translatable="false">)</string>
+    <string name="calc_equ" translatable="false">=</string>
+    <string name="calc_mult" translatable="false">×</string>
+    <string name="calc_div" translatable="false">÷</string>
+    <string name="calc_root" translatable="false">√(</string>
+    <string name="calc_coma" translatable="false">,</string>
+
+    <!-- messages -->
+    <string name="can_not_calculate">Can\'t be calculated. Recheck the expression</string>
+
+</resources>

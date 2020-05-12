@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.google.android.material.textview.MaterialTextView" />
+
+        <variable
+            name="entry"
+            type="com.senyk.volodymyr.calculator.presentation.viewmodel.entity.HistoryEntryUi" />
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.calculator.presentation.viewmodel.CalculatorViewModel" />
+
+    </data>
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/Size.Wide"
+        android:gravity="end"
+        android:onClick="@{view -> viewModel.onHistoryEntryClick(((MaterialTextView)view).getText().toString)}"
+        android:layout_marginHorizontal="?attr/margin_main"
+        android:layout_marginBottom="?attr/margin_main"
+        android:text="@{entry.text}"
+        android:textSize="?attr/text_size_history_answer" />
+
+</layout>

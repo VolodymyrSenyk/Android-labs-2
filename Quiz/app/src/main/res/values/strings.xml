@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Узнай поэта</string>
+    <string name="error_message">Что-то пошло не так</string>
+    <string name="no_questions_left_dialog_title">Викторина пройдена!</string>
+    <string name="no_questions_left_dialog_message">Вы ответили на все вопросы%1$s</string>
+    <string name="user_score_message">, правильно указан автор %1$s из %2$d</string>
+    <string name="user_bad_score_message">, но не узнали ни одного поэта</string>
+    <string name="no_questions_left_dialog_exit">Выйти</string>
+    <string name="no_questions_left_dialog_again">Начать заново</string>
+    <string name="exit_message">Нажмите ещё раз чтоб выйти</string>
+</resources>

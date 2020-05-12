@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.calculator.presentation.viewmodel.CalculatorViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/Size.MatchParent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/historyList"
+            style="@style/Size.MatchConstraints"
+            android:layout_margin="?attr/margin_main"
+            android:background="?attr/colorBackground"
+            android:fadeScrollbars="false"
+            android:overScrollMode="never"
+            android:scrollbarThumbVertical="?attr/colorPrimaryDark"
+            android:scrollbarTrackVertical="?attr/colorBackgroundDark"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/buttonClearHistory"
+            app:layout_constraintEnd_toStartOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonClearHistory"
+            style="@style/Size.Wide"
+            android:layout_margin="?attr/margin_main"
+            android:enabled="@{viewModel.history().size() > 0}"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:onClick="@{() -> viewModel.onClearHistoryClick()}"
+            android:text="@string/button_clear_history"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorTextVariant"
+            android:textSize="?attr/text_size_button"
+            android:textStyle="normal"
+            app:backgroundTint="?attr/colorButtonDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/historyList" />
+
+        <View
+            android:id="@+id/divider"
+            style="@style/Divider.Vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/historyList"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
